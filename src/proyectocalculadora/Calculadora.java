@@ -142,17 +142,10 @@ public class Calculadora {
       pilaOperadores = new PilaA<Character>(); // pila para guardad a los operadores 
       
       numeros = new ArrayList<Character>();
-      numeros.add('0');
-      numeros.add('1');
-      numeros.add('2');
-      numeros.add('3');
-      numeros.add('4');
-      numeros.add('5');
-      numeros.add('6');
-      numeros.add('7');
-      numeros.add('8');
-      numeros.add('9');
-      
+
+        for (int j = 0; j < 10; j++)
+            numeros.add((char)j);
+
       operadores = new ArrayList<Character>();
       operadores.add('+');
       operadores.add('-');
