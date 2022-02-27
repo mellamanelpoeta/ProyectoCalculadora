@@ -234,8 +234,16 @@ public class Calculadora {
                 peek = resultado.peek();
                 resultado.pop(); // nunca voy a hacer un pop de una pila vacía porque antes de un operador siempre tengo numero
                 operador = limpio.charAt(i);
-                if (!numero.equals(""))
-                    resultado.push(opera(operador, peek, Double.parseDouble(numero)));
+                if (!numero.equals("")){
+                    if(operador == '/' && numero.charAt(0)== '0' ){
+                        // mandar un throw que diga que no se puede hacer división entre 0
+                        throw new DivisionEntreCeroExcepcion("División entre 0");
+                    }
+                    else{
+                        resultado.push(opera(operador, peek, Double.parseDouble(numero)));
+                    }
+                    
+                }
                 else
                     resultado.push(opera(operador, resultado.peek(), peek));
                 pasePorOperador = true;
