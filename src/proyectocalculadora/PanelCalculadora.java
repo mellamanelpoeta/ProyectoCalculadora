@@ -500,10 +500,39 @@ public class PanelCalculadora extends javax.swing.JPanel {
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         // TODO add your handling code here:
+        
+        String cadena;
+        cadena = txtPantalla.getText();
+        int extra=0;
+        
+        for(int i=0; i<cadena.length(); i++){
+            if(cadena.substring(i, i+1).equals("("))
+                extra= extra +1;
+            if(cadena.substring(i, i+1).equals(")"))
+                extra = extra -1;
+        }
+        if(extra == 0){
+            txtPantalla.setText(cadena+("("));
+        }
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
         // TODO add your handling code here:
+        String cadena;
+        cadena = txtPantalla.getText();
+        int extra=0;
+        
+        for(int i=0; i<cadena.length(); i++){
+            if(cadena.substring(i, i+1).equals("("))
+                extra= extra +1;
+            if(cadena.substring(i, i+1).equals(")"))
+                extra = extra -1;
+            else
+                extra = extra;
+        }
+        if(extra == 1){
+            txtPantalla.setText(cadena+(")"));
+        }
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
