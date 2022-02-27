@@ -15,6 +15,12 @@ public class ProyectoCalculadora {
         System.out.println("es raro el amor");
         System.out.println("un intento mas");
         System.out.println("Intento Almu");
+        
+        
+        String cadena = "(1+2)*(3+4)";
+        String resp;
+        resp = Calculadora.conviertePostfija(cadena);
+        System.out.println(resp);
     }
     
 }
