@@ -156,7 +156,7 @@ public class Calculadora {
       
       resp = new ArrayList<Character>();
       for (i = 0; i < entrada.length(); i++){
-          if (numeros.contains((entrada.charAt(i))))
+          if (numeros.contains((entrada.charAt(i))) || entrada.charAt(i) == '.') // para contemplar el caso de los decimales
               resp.add(entrada.charAt(i));
               
           else
