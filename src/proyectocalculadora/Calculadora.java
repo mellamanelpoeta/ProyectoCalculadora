@@ -96,11 +96,11 @@ public class Calculadora {
                         /*
                         Esto excluye desde la sintaxis los casos basicos de la division entre cero.
                         */
-                        if(i < tamaño - 2 && entrada.charAt(i + 1) == '0' && (entrada.charAt(i + 2) == '*' || entrada.charAt(i + 2) == '/') )
-                            resp = false;
+                        if(i < tamaño - 2 && entrada.charAt(i + 1) == '0' && (entrada.charAt(i + 2) == '*' || entrada.charAt(i + 2) == '/') ) 
+                            throw new DivisionEntreCeroExcepcion("División entre cero");
                         else
-                           if(i == tamaño -2 && entrada.charAt(i + 1) == '0' )
-                             resp = false;
+                           if(i == tamaño - 2 && entrada.charAt(i + 1) == '0' )
+                            throw new DivisionEntreCeroExcepcion("División entre cero");
                     }
                 }
                 else{
