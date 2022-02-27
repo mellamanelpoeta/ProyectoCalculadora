@@ -239,52 +239,52 @@ public class Calculadora {
     public static String calcula(String entrada) {
         String respfinal= "";
         PilaA<Double> resultado = new PilaA<Double>();
-        if(revisaSintaxis(entrada) && entrada.length() < 50) {
-            String limpio = infijaAPostfija(entrada);
-            double resp = 0;
-            ArrayList<Character> ops = new ArrayList<Character>();
-            ops.add('+');
-            ops.add('-');
-            ops.add('/');
-            ops.add('*');
-            String numero = "";
-            boolean pasePorOperador = false;
-            double peek;
-            char operador;
-            for (int i = 0; i < limpio.length(); i++) {
-                if (limpio.charAt(i) != ',' && !ops.contains(limpio.charAt(i))) {
-                    numero += limpio.charAt(i);
-                    pasePorOperador = false;
-                }
-                else if (ops.contains(limpio.charAt(i))) {
-                    peek = resultado.peek();
-                    resultado.pop(); // nunca voy a hacer un pop de una pila vacía porque antes de un operador siempre tengo numero
-                    operador = limpio.charAt(i);
-                    if (!numero.equals(""))
-                        resultado.push(opera(operador, peek, Double.parseDouble(numero)));
-                    else
-                        resultado.push(opera(operador, resultado.peek(), peek));
-                    pasePorOperador = true;
-                    numero = "";
-                }
-
-                if (!pasePorOperador && limpio.charAt(i) == ',')
-                    if (numero.equals("")) {
-                        resultado.push(0.0);
-                        numero = "";
+        if(!(entrada.length() == 0 || entrada.length() == 1)) {
+            if (revisaSintaxis(entrada) && entrada.length() < 50) {
+                String limpio = infijaAPostfija(entrada);
+                double resp = 0;
+                ArrayList<Character> ops = new ArrayList<Character>();
+                ops.add('+');
+                ops.add('-');
+                ops.add('/');
+                ops.add('*');
+                String numero = "";
+                boolean pasePorOperador = false;
+                double peek;
+                char operador;
+                for (int i = 0; i < limpio.length(); i++) {
+                    if (limpio.charAt(i) != ',' && !ops.contains(limpio.charAt(i))) {
+                        numero += limpio.charAt(i);
                         pasePorOperador = false;
-                    }
-                    else if (!numero.equals(".")) {
-                        resultado.push(Double.parseDouble(numero));
+                    } else if (ops.contains(limpio.charAt(i))) {
+                        peek = resultado.peek();
+                        resultado.pop(); // nunca voy a hacer un pop de una pila vacía porque antes de un operador siempre tengo numero
+                        operador = limpio.charAt(i);
+                        if (!numero.equals(""))
+                            resultado.push(opera(operador, peek, Double.parseDouble(numero)));
+                        else
+                            resultado.push(opera(operador, resultado.peek(), peek));
+                        pasePorOperador = true;
                         numero = "";
                     }
-            }
-            respfinal = resultado.peek()+"";
+
+                    if (!pasePorOperador && limpio.charAt(i) == ',')
+                        if (numero.equals("")) {
+                            resultado.push(0.0);
+                            numero = "";
+                            pasePorOperador = false;
+                        } else if (!numero.equals(".")) {
+                            resultado.push(Double.parseDouble(numero));
+                            numero = "";
+                        }
+                }
+                respfinal = resultado.peek() + "";
+            } else
+                respfinal = "Sintax error";
+
         }
         else
-            respfinal = "Sintax error";
-
-
+            respfinal = "ingrese una operacion";
 
         return respfinal;
     }
