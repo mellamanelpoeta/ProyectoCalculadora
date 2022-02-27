@@ -237,6 +237,7 @@ public class Calculadora {
      */
 
     public static String calcula(String entrada) {
+        String respfinal= "";
         PilaA<Double> resultado = new PilaA<Double>();
         if(revisaSintaxis(entrada)) {
             String limpio = infijaAPostfija(entrada);
@@ -284,9 +285,14 @@ public class Calculadora {
 
 
             }
+            respfinal = resultado.peek()+"";
         }
+        else
+            respfinal = "Sintax error";
 
-        return resultado.peek()+"";
+
+
+        return respfinal;
     }
 
     private static double opera(char operador, double first, double second) {
