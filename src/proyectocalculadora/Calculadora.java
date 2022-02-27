@@ -51,7 +51,7 @@ public class Calculadora {
      * de la calculadora para que no haya ningun error
      */
     
-    public static boolean revisaSintaxis(String entrada){ 
+    private static boolean revisaSintaxis(String entrada){
         int i,tamaño,total,restantes;
         boolean resp;
         ArrayList<Character> operadores;
@@ -151,48 +151,7 @@ public class Calculadora {
     }
     
     
-    private static boolean indicaJerarquia(char peek, char elemento){ // verdadero si el elemento es de menor o igual jerarquía que peek
-        int a, b;
-        boolean resp;
-        
-        a = 0; // valor del elemento
-        b = 0; //valor de peek
-        switch (elemento){
-            case '+': //suma y resta valen 1 (jerarquía más baja)
-                a = 1;
-                break;
-            case '-':
-                a = 1;
-                break;
-            case '/': // división y multiplicación valen 2 (jeraquía más alta)
-                a = 2;
-                break;
-            case '*':
-                a = 2;
-                break;      
-        }
-        switch (peek){
-            case '+': //suma y resta valen 1 (jerarquía más baja)
-                b = 1;
-                break;
-            case '-':
-                b = 1;
-                break;
-            case '/': // división y multiplicación valen 2 (jeraquía más alta)
-                b = 2;
-                break;
-            case '*':
-                b = 2;
-                break; 
-        }
-        
-        if (a <= b) // si la prioridad del elemento es menor o igual a de peek
-            resp = true;
-        else
-            resp = false;
-        return resp;
-        
-    }
+
     
     /**
      * El metodo calculaJerarquia sirve para indicar el orden de operaciones
@@ -277,59 +236,57 @@ public class Calculadora {
      * que cambia de infija a postfija
      */
 
-    public static double calcula(String limpio) {
-        double resp = 0;
-        ArrayList<Character> ops = new ArrayList<Character>();
-        ops.add('+');
-        ops.add('-');
-        ops.add('/');
-        ops.add('*');
-        String numero = "";
-        boolean pasePorOperador = false;
-        double peek;
-        char operador;
+    public static String calcula(String entrada) {
         PilaA<Double> resultado = new PilaA<Double>();
-        for (int i = 0; i < limpio.length(); i++) {
-            if (limpio.charAt(i) != ',' && !ops.contains(limpio.charAt(i))) {
-                numero += limpio.charAt(i);
-                pasePorOperador = false;
-            }
-            else if (ops.contains(limpio.charAt(i))) {
-                peek = resultado.peek();
-                resultado.pop(); // nunca voy a hacer un pop de una pila vacía porque antes de un operador siempre tengo numero
-                operador = limpio.charAt(i);
-                if (!numero.equals("")){
-                    if(operador == '/' && Double.parseDouble(numero) == 0 ){
-                        // mandar un throw que diga que no se puede hacer división entre 0
-                        throw new DivisionEntreCeroExcepcion("División entre 0");
-                    }
-                    else{
-                        resultado.push(opera(operador, peek, Double.parseDouble(numero)));
-                    }
-                    
-                }
-                else
-                    resultado.push(opera(operador, resultado.peek(), peek));
-                pasePorOperador = true;
-                numero = "";
-            }
-
-            if (!pasePorOperador && limpio.charAt(i) == ',')
-                if (numero.equals("")) {
-                    resultado.push(0.0);
-                    numero = "";
+        if(revisaSintaxis(entrada)) {
+            String limpio = infijaAPostfija(entrada);
+            double resp = 0;
+            ArrayList<Character> ops = new ArrayList<Character>();
+            ops.add('+');
+            ops.add('-');
+            ops.add('/');
+            ops.add('*');
+            String numero = "";
+            boolean pasePorOperador = false;
+            double peek;
+            char operador;
+            for (int i = 0; i < limpio.length(); i++) {
+                if (limpio.charAt(i) != ',' && !ops.contains(limpio.charAt(i))) {
+                    numero += limpio.charAt(i);
                     pasePorOperador = false;
-                }
-                else if (!numero.equals(".")) {
-                    resultado.push(Double.parseDouble(numero));
+                } else if (ops.contains(limpio.charAt(i))) {
+                    peek = resultado.peek();
+                    resultado.pop(); // nunca voy a hacer un pop de una pila vacía porque antes de un operador siempre tengo numero
+                    operador = limpio.charAt(i);
+                    if (!numero.equals("")) {
+                        if (operador == '/' && Double.parseDouble(numero) == 0) {
+                            // mandar un throw que diga que no se puede hacer división entre 0
+                            throw new DivisionEntreCeroExcepcion("División entre 0");
+                        } else {
+                            resultado.push(opera(operador, peek, Double.parseDouble(numero)));
+                        }
+
+                    } else
+                        resultado.push(opera(operador, resultado.peek(), peek));
+                    pasePorOperador = true;
                     numero = "";
                 }
 
+                if (!pasePorOperador && limpio.charAt(i) == ',')
+                    if (numero.equals("")) {
+                        resultado.push(0.0);
+                        numero = "";
+                        pasePorOperador = false;
+                    } else if (!numero.equals(".")) {
+                        resultado.push(Double.parseDouble(numero));
+                        numero = "";
+                    }
 
+
+            }
         }
 
-
-        return resultado.peek();
+        return resultado.peek()+"";
     }
 
     private static double opera(char operador, double first, double second) {
@@ -348,62 +305,6 @@ public class Calculadora {
         return resp;
     }
     
-    public static String conviertePostfija(String entrada){
-      
-      int i;
-      ArrayList<Character> numeros;
-      ArrayList<Character> operadores;
-      ArrayList<Character> resp;
-      PilaA<Character> pilaOperadores;
-   
-      
-      pilaOperadores = new PilaA<Character>(); // pila para guardad a los operadores 
-      
-      numeros = new ArrayList<Character>();
 
-        for (int j = 0; j < 10; j++)
-            numeros.add((char)j);
-
-      operadores = new ArrayList<Character>();
-      operadores.add('+');
-      operadores.add('-');
-      operadores.add('*');
-      operadores.add('/');
-      
-      
-      
-      resp = new ArrayList<Character>();
-      for (i = 0; i < entrada.length(); i++){
-          if (numeros.contains((entrada.charAt(i))) || entrada.charAt(i) == '.') // para contemplar el caso de los decimales
-              resp.add(entrada.charAt(i));
-              
-          else
-              if (operadores.contains(entrada.charAt(i))){
-                 
-                  while (!pilaOperadores.isEmpty() &&  pilaOperadores.peek()!= '(' && indicaJerarquia(pilaOperadores.peek(), entrada.charAt(i))){
-                      
-                      resp.add(pilaOperadores.pop());
-                  }
-                  pilaOperadores.push(entrada.charAt(i));
-              } 
-              else{
-           
-                  if (entrada.charAt(i) == '(')
-                      pilaOperadores.push(entrada.charAt(i));
-                  else if (entrada.charAt(i) == ')'){
-                      while (!pilaOperadores.isEmpty() && pilaOperadores.peek() != '(')
-                              resp.add(pilaOperadores.pop());
-                      pilaOperadores.pop();
-                  } 
-              }
-                  
-          
-      }
-      while(!pilaOperadores.isEmpty())
-          resp.add(pilaOperadores.pop());
-         
-      
-      return resp.toString();
-    }
     
 }
