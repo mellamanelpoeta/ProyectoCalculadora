@@ -239,7 +239,7 @@ public class Calculadora {
     public static String calcula(String entrada) {
         String respfinal= "";
         PilaA<Double> resultado = new PilaA<Double>();
-        if(revisaSintaxis(entrada)) {
+        if(revisaSintaxis(entrada) && entrada.length() < 50) {
             String limpio = infijaAPostfija(entrada);
             double resp = 0;
             ArrayList<Character> ops = new ArrayList<Character>();
@@ -255,19 +255,14 @@ public class Calculadora {
                 if (limpio.charAt(i) != ',' && !ops.contains(limpio.charAt(i))) {
                     numero += limpio.charAt(i);
                     pasePorOperador = false;
-                } else if (ops.contains(limpio.charAt(i))) {
+                }
+                else if (ops.contains(limpio.charAt(i))) {
                     peek = resultado.peek();
                     resultado.pop(); // nunca voy a hacer un pop de una pila vacía porque antes de un operador siempre tengo numero
                     operador = limpio.charAt(i);
-                    if (!numero.equals("")) {
-                        if (operador == '/' && Double.parseDouble(numero) == 0) {
-                            // mandar un throw que diga que no se puede hacer división entre 0
-                            throw new DivisionEntreCeroExcepcion("División entre 0");
-                        } else {
-                            resultado.push(opera(operador, peek, Double.parseDouble(numero)));
-                        }
-
-                    } else
+                    if (!numero.equals(""))
+                        resultado.push(opera(operador, peek, Double.parseDouble(numero)));
+                    else
                         resultado.push(opera(operador, resultado.peek(), peek));
                     pasePorOperador = true;
                     numero = "";
@@ -278,12 +273,11 @@ public class Calculadora {
                         resultado.push(0.0);
                         numero = "";
                         pasePorOperador = false;
-                    } else if (!numero.equals(".")) {
+                    }
+                    else if (!numero.equals(".")) {
                         resultado.push(Double.parseDouble(numero));
                         numero = "";
                     }
-
-
             }
             respfinal = resultado.peek()+"";
         }
@@ -297,9 +291,8 @@ public class Calculadora {
 
     private static double opera(char operador, double first, double second) {
         double resp=0;
-        if(operador == '/' && second== 0) {// falta ver la solucion a que esto no pase
-            resp = second;
-            operador = '9'; //  esto para evitar estropear pruebas en el inter
+        if (operador == '/' && second == 0.0) {
+            throw new DivisionEntreCeroExcepcion("division entre cero");
         }
         switch (operador) {
             case '+': resp = first+second; break;
