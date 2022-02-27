@@ -514,6 +514,9 @@ public class PanelCalculadora extends javax.swing.JPanel {
         if(extra == 0){
             txtPantalla.setText(cadena+("("));
         }
+        else{
+            txtPantalla.setText("Invalido");
+        }
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
@@ -532,6 +535,9 @@ public class PanelCalculadora extends javax.swing.JPanel {
         }
         if(extra == 1){
             txtPantalla.setText(cadena+(")"));
+        }
+        else{
+            txtPantalla.setText("Invalido");
         }
     }//GEN-LAST:event_jButton28ActionPerformed
 
