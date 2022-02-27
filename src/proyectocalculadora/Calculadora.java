@@ -265,7 +265,7 @@ public class Calculadora {
                 resultado.pop(); // nunca voy a hacer un pop de una pila vacía porque antes de un operador siempre tengo numero
                 operador = limpio.charAt(i);
                 if (!numero.equals("")){
-                    if(operador == '/' && numero.charAt(0)== '0' ){
+                    if(operador == '/' && Double.parseDouble(numero) == 0 ){
                         // mandar un throw que diga que no se puede hacer división entre 0
                         throw new DivisionEntreCeroExcepcion("División entre 0");
                     }
