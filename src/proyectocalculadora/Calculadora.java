@@ -39,7 +39,7 @@ public class Calculadora {
         return resp;
     }
     
-    private static boolean revisaSintaxis(String entrada){ 
+    public static boolean revisaSintaxis(String entrada){ 
         int i,tamaño,total,restantes;
         boolean resp;
         ArrayList<Character> operadores;
@@ -63,6 +63,9 @@ public class Calculadora {
         || entrada.charAt(tamaño - 1) == '/' || entrada.charAt(tamaño - 1) == '(' || entrada.charAt(tamaño - 1) == '-')
             resp=false;   
         else
+            /*
+            Se revisa que los numeros con punto decimal estan bien escritos (se resuelve 'abc.de.fg' y 'abc.')
+            */
             resp=revisaPuntos(entrada);
             while(i <= tamaño-1 && resp && total <= restantes){
                         /*
@@ -76,6 +79,13 @@ public class Calculadora {
                     if(entrada.charAt(i) == '-'){
                         if(entrada.charAt(i+1) ==')')//esto evita el ...-)...
                             resp = false;
+                    }
+                    if(entrada.charAt(i) == '/'){
+                        if(i < tamaño - 2 && entrada.charAt(i + 1) == '0' && (entrada.charAt(i + 2) == '*' || entrada.charAt(i + 2) == '/') )
+                            resp = false;
+                        else
+                           if(i == tamaño -2 && entrada.charAt(i + 1) == '0' )
+                             resp = false;
                     }
                 }
                 else{
