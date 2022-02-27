@@ -12,77 +12,89 @@ import java.util.Arrays;
 public class Calculadora {
     
     
-     public static boolean checaParentesis(String entrada) {
-        boolean resp = true;
-        PilaA pila = new PilaA();
-
+    private static boolean revisaSintaxis(String entrada){ 
+        int i,tamaño,total,restantes;
+        boolean resp;
         ArrayList<Character> operadores;
-        operadores = new ArrayList<Character>();
-        operadores.add('+');
-        operadores.add('-');
-        operadores.add('*');
-        operadores.add('/');
+        PilaA<Character> pila;
+        
+        
+        pila = new PilaA<>();
+        tamaño = entrada.length();
+        operadores = new ArrayList<>(Arrays.asList('+', '-', '*', '/'));
+        i=0;
+        total=0;
+        restantes=tamaño;
+        resp=true;
 
-
-        int i = 1; //empiezo en 1 para que no se salga del string
-        if(entrada.charAt(0) ==')') // reviso que el primer parentesis no sea al reves y para empezar en int = 1
-            resp = false;
-        while (i < entrada.length() && resp) {
-            if (entrada.charAt(i) == '(' || entrada.charAt(i) == '(') {
-                if (entrada.charAt(i) == '(') {
-                    //casos a la izquierda de '(' en que solo funciona: ((, +(
-                    if (entrada.charAt(i - 1) != '(' && !operadores.contains(entrada.charAt(i - 1)))
-                        resp = false;
-                    //caso en el que falla a la derecha de '(': (*, (+, (/, pero si funciona en (-
-                    if (operadores.contains(entrada.charAt(i + 1)) && operadores.contains(entrada.charAt(i + 1) != '-'))
-                        resp = false;
+        /*
+        Revisamos si la cadena comienza a o termina con algún caracter prohibido
+        */
+        if (entrada.charAt(i) == '+' || entrada.charAt(i) == '*' || entrada.charAt(i) == '/' || entrada.charAt(i) == ')' 
+        || entrada.charAt(tamaño - 1) == '.'|| entrada.charAt(tamaño - 1) == '+' || entrada.charAt(tamaño - 1) == '*' 
+        || entrada.charAt(tamaño - 1) == '/' || entrada.charAt(tamaño - 1) == '(' || entrada.charAt(tamaño - 1) == '-')
+            resp=false;   
+        else
+            while(i <= tamaño-1 && resp && total <= restantes){
+                        /*
+                        Si se encuentra algun operador, 
+                        se asegura que el caracter siguiente no sea otro operador
+                        */       
+                if(operadores.contains(entrada.charAt(i))){
+                    if(operadores.contains(entrada.charAt(i + 1))) //no hay problema con el 'i+1' porque el caso en el que el operador esta en la ultima casilla ya se considero
+                        resp=false;
                     else
-                        pila.push(entrada.charAt(i));
-                } else {
-                    //casos a la izquierda de ')' en que solo funciona: )), a)
-                    if (entrada.charAt(i - 1) != ')' && entrada.charAt(i - 1) != (double) entrada.charAt(i - 1))//tal vez sea esto el problema, pregunto si el char es un double
-                        resp = false;
-                    //caso en el que falla a la derecha de ')': )a
-                    if (entrada.charAt(i - 1) == (double) entrada.charAt(i - 1))
-                        resp = false;
-                    else
-                        try {
-                            pila.pop();
-                        } catch (Exception e) {
+                    if(entrada.charAt(i) == '-'){
+                        if(entrada.charAt(i+1) ==')')
                             resp = false;
+                    }
+                }
+                else{
+                        /*
+                        Si se encuentra algun parentesis, 
+                        entra el proceso de revision de parentesis
+                        */       
+                if(entrada.charAt(i) == '(' || entrada.charAt(i) == ')'){                                
+                    if(entrada.charAt(i) == '('){
+                        if(i > 0 && operadores.contains(entrada.charAt(i-1)) && entrada.charAt(i-1) != ')'){ //esto evita que ocurra ...)(...
+                            pila.push('('); 
+                            total++;
                         }
+                        else{
+                            if(i == 0){
+                                pila.push('('); 
+                                total++;
+                                }
+                            else
+                                resp=false;
+                            }
+                        }
+                    else{
+                        if(i < tamaño-1 && !(entrada.charAt(i-1) == '(') &&operadores.contains(entrada.charAt(i+1))){//esto evita que ocurra ...()...(tampoco hay problema con i=0 pues ese caso se elimina al principio)
+                            if(!pila.isEmpty()){
+                              pila.pop();  
+                              total--;
+                                }
+                            else
+                                resp=false;
+                            }
+                        else{
+                            if(i == tamaño-1){
+                                if(!pila.isEmpty()){
+                                    pila.pop();  
+                                    total--;
+                            }
+                            else
+                                resp=false;     
+                            }
+                        }
+                    }
                 }
             }
             i++;
         }
-
-
-        return resp;
-    }
-
-    private static boolean revisaSintaxis(String entrada) {
-        int i = 0, tamaño;
-        boolean resp = true;
-        char pos1, pos2;
-        ArrayList<Character> operadores;
-        ArrayList<Character> numeros;
-
-
-        operadores = new ArrayList<Character>(Arrays.asList('+', '-', '*', '/', '.'));
-        tamaño = entrada.length();
-
-
-        if (entrada.charAt(0) == '+' || entrada.charAt(0) == '*' || entrada.charAt(0) == '/'
-                || entrada.charAt(tamaño - 1) == '+' || entrada.charAt(tamaño - 1) == '*' || entrada.charAt(tamaño - 1) == '/'
-        ) //revisa si la entrada comienza o termina con algún asterisco
-            resp = false;
-        while (i < tamaño - 1 && resp) {
-            pos1 = entrada.charAt(i);
-            pos2 = entrada.charAt(i + 1);
-            if (operadores.contains(pos1) && operadores.contains(pos2))
-                if (pos2 != '-')
-                    resp = false;
-        }
+        if(!pila.isEmpty())
+            resp=false;
         return resp;
     }
     
