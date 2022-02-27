@@ -564,9 +564,4 @@ public class PanelCalculadora extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
 
-
-
-    public static void main (String [] args){
-
-    }
 }
