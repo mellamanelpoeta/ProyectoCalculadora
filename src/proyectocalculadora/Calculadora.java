@@ -129,6 +129,74 @@ public class Calculadora {
         return resp;
         
     }
+
+    private static boolean calculaJerarquia(char peek, char op) {
+        int a, b;
+        if (peek == '+' || peek == '-' || peek == '(')
+            if(peek == '(')
+                a= 0;
+            else
+                a = 1;
+        else
+            a = 2;
+        if (op == '+' || op == '-')
+            b = 1;
+        else
+            b = 2;
+
+        return a >= b; // esto es lo que me indica que lo de hasta arriba de la pila sea mayor o igual al caracter en el que estoy
+
+    }
+
+    private static String infijaAPostfija(String entrada) {
+        StringBuilder bob = new StringBuilder();
+        ArrayList<Character> nums = new ArrayList<Character>();
+        ArrayList<Character> ops = new ArrayList<Character>();
+        ops.add('+');
+        ops.add('-');
+        ops.add('/');
+        ops.add('*');
+        PilaA<Character> pila = new PilaA<Character>();
+        for (int i = 0; i < 10; i++) {
+            nums.add(Character.forDigit(i, 10));
+        }
+
+        for (int i = 0; i < entrada.length(); i++) {
+            if (nums.contains(entrada.charAt(i)) || entrada.charAt(i) == '.')
+                bob.append(entrada.charAt(i));
+
+            else if (entrada.charAt(i) == '(')
+                pila.push(entrada.charAt(i));
+
+            else if (entrada.charAt(i) == ')') {
+                while (!pila.isEmpty() && !pila.peek().equals('('))
+                    bob.append(pila.pop());
+
+                if (pila.peek().equals('('))
+                    pila.pop();
+
+            }
+
+            else if (ops.contains(entrada.charAt(i))) {
+
+                while (!pila.isEmpty() && calculaJerarquia(pila.peek(), entrada.charAt(i)));
+                    bob.append(pila.pop());
+
+                pila.push(entrada.charAt(i));
+
+            }
+
+
+
+        }
+
+        while (!pila.isEmpty())
+            bob.append(pila.pop());
+
+
+
+        return bob.toString();
+    }
     
     public static String conviertePostfija(String entrada){
       
