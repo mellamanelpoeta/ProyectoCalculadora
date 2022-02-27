@@ -11,6 +11,12 @@ import java.util.Arrays;
  */
 public class Calculadora {
     
+    /**
+     * 
+     * El metodo revisaPunto funciona para revisar los puntos decimales 
+     * una entrada especifica
+     */
+    
     private static boolean revisaPuntos(String cadena){
         int i=0,j,puntos=0;
         boolean resp=true;
@@ -38,6 +44,12 @@ public class Calculadora {
                 }
         return resp;
     }
+    
+    /**
+     * 
+     * El metodo revisaSintaxis tiene el proposito de revisar la sintaxis
+     * de la calculadora para que no haya ningun error
+     */
     
     public static boolean revisaSintaxis(String entrada){ 
         int i,tamaño,total,restantes;
@@ -181,6 +193,12 @@ public class Calculadora {
         return resp;
         
     }
+    
+    /**
+     * El metodo calculaJerarquia sirve para indicar el orden de operaciones
+     * en la calculadora, es parte del metodo infijaAPostfija
+     * 
+     */
 
     private static boolean calculaJerarquia(char peek, char op) {
         int a, b;
@@ -252,6 +270,12 @@ public class Calculadora {
 
         return bob.toString();
     }
+    
+    /**
+     * 
+     * El metodo calcula determina el valor a partir de la cadena del metodo 
+     * que cambia de infija a postfija
+     */
 
     public static double calcula(String limpio) {
         double resp = 0;
