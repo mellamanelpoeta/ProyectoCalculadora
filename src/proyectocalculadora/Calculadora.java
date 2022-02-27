@@ -93,6 +93,9 @@ public class Calculadora {
                             resp = false;
                     }
                     if(entrada.charAt(i) == '/'){
+                        /*
+                        Esto excluye desde la sintaxis los casos basicos de la division entre cero.
+                        */
                         if(i < tamaño - 2 && entrada.charAt(i + 1) == '0' && (entrada.charAt(i + 2) == '*' || entrada.charAt(i + 2) == '/') )
                             resp = false;
                         else
@@ -121,7 +124,7 @@ public class Calculadora {
                             }
                         }
                     else{
-                        if(i < tamaño-1 && ( operadores.contains(entrada.charAt(i+1)) || entrada.charAt(i+1)==')' || entrada.charAt(i-1)==')') ){ //esto evita que ocurra ...()...(tampoco hay problema con i=0 pues ese caso se elimina al principio)
+                        if(i < tamaño-1 && ( operadores.contains(entrada.charAt(i + 1)) || entrada.charAt(i + 1)==')' || entrada.charAt(i - 1) == ')' ) ){ //esto evita que ocurra ...()...(tampoco hay problema con i=0 pues ese caso se elimina al principio)
                             if(!pila.isEmpty()){
                               pila.pop();  
                               total--;
@@ -130,7 +133,7 @@ public class Calculadora {
                                 resp=false;
                             }
                         else{
-                            if(i == tamaño-1){
+                            if(i == tamaño - 1){
                                 if(!pila.isEmpty()){
                                     pila.pop();  
                                     total--;
@@ -143,7 +146,7 @@ public class Calculadora {
                 }
             }
             i++;
-            restantes=restantes-1;
+            restantes = restantes - 1;
         }
         if(!pila.isEmpty())
             resp=false;
