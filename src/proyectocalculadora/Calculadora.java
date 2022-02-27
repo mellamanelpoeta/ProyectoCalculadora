@@ -11,6 +11,33 @@ import java.util.Arrays;
  */
 public class Calculadora {
     
+    private static boolean revisaPuntos(String cadena){
+        int i=0,j,puntos=0;
+        boolean resp=true;
+        String[] numbers = cadena.replaceAll("[^0-9.]+", " ").trim().split(" ");
+        while(i<numbers.length && resp){
+            j=0;
+            while(j<numbers[i].length() && puntos<=1){
+                if(numbers[i].charAt(numbers[i].length()-1)!='.'){
+                    if(numbers[i].charAt(j) != '.')
+                        j++;
+                    else{
+                        puntos++;
+                        j++;
+                    }
+                }
+                else
+                    puntos=2;
+            }
+                    if(j == numbers[i].length()){
+                        i++;
+                        puntos=0;                
+                    }
+                    else
+                        resp=false;                    
+                }
+        return resp;
+    }
     
     private static boolean revisaSintaxis(String entrada){ 
         int i,tamaño,total,restantes;
@@ -27,6 +54,7 @@ public class Calculadora {
         restantes=tamaño;
         resp=true;
 
+
         /*
         Revisamos si la cadena comienza a o termina con algún caracter prohibido
         */
@@ -35,17 +63,18 @@ public class Calculadora {
         || entrada.charAt(tamaño - 1) == '/' || entrada.charAt(tamaño - 1) == '(' || entrada.charAt(tamaño - 1) == '-')
             resp=false;   
         else
+            resp=revisaPuntos(entrada);
             while(i <= tamaño-1 && resp && total <= restantes){
                         /*
                         Si se encuentra algun operador, 
                         se asegura que el caracter siguiente no sea otro operador
                         */       
-                if(operadores.contains(entrada.charAt(i))){
-                    if(operadores.contains(entrada.charAt(i + 1))) //no hay problema con el 'i+1' porque el caso en el que el operador esta en la ultima casilla ya se considero
+                if( operadores.contains(entrada.charAt(i)) ){
+                    if( operadores.contains(entrada.charAt(i + 1)) ) //no hay problema con el 'i+1' porque el caso en el que el operador esta en la ultima casilla ya se considero
                         resp=false;
                     else
                     if(entrada.charAt(i) == '-'){
-                        if(entrada.charAt(i+1) ==')')
+                        if(entrada.charAt(i+1) ==')')//esto evita el ...-)...
                             resp = false;
                     }
                 }
@@ -56,12 +85,12 @@ public class Calculadora {
                         */       
                 if(entrada.charAt(i) == '(' || entrada.charAt(i) == ')'){                                
                     if(entrada.charAt(i) == '('){
-                        if(i > 0 && operadores.contains(entrada.charAt(i-1)) && entrada.charAt(i-1) != ')'){ //esto evita que ocurra ...)(...
+                        if(i > 0 && ( operadores.contains(entrada.charAt(i - 1)) || entrada.charAt(i + 1) == '(' || entrada.charAt(i - 1) == '(') ){ //esto evita que ocurra ...)(...
                             pila.push('('); 
                             total++;
                         }
                         else{
-                            if(i == 0){
+                            if(i == 0 ){
                                 pila.push('('); 
                                 total++;
                                 }
@@ -70,7 +99,7 @@ public class Calculadora {
                             }
                         }
                     else{
-                        if(i < tamaño-1 && !(entrada.charAt(i-1) == '(') &&operadores.contains(entrada.charAt(i+1))){//esto evita que ocurra ...()...(tampoco hay problema con i=0 pues ese caso se elimina al principio)
+                        if(i < tamaño-1 && ( operadores.contains(entrada.charAt(i+1)) || entrada.charAt(i+1)==')' || entrada.charAt(i-1)==')') ){ //esto evita que ocurra ...()...(tampoco hay problema con i=0 pues ese caso se elimina al principio)
                             if(!pila.isEmpty()){
                               pila.pop();  
                               total--;
@@ -92,6 +121,7 @@ public class Calculadora {
                 }
             }
             i++;
+            restantes=restantes-1;
         }
         if(!pila.isEmpty())
             resp=false;
