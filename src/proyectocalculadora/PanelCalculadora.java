@@ -9,7 +9,7 @@ package proyectocalculadora;
  *
  * @author almu
  */
-public class PanelCalculadora extends javax.swing.JPanel {
+public class PanelCalculadora extends javax.swing.JFrame {
     
     String memoria1;
     String signo;
@@ -362,6 +362,15 @@ public class PanelCalculadora extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PanelCalculadora().setVisible(true);
+            }
+        });
+        
+    }
+    
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
             // TODO add your handling code here:
             txtPantalla.setText(txtPantalla.getText()+"8");
