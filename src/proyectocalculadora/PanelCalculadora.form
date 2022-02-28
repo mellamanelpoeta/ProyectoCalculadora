@@ -65,26 +65,26 @@
                       <Component id="jButton15" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="jButton11" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="jButton18" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jButton23" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="puntoB" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jButton13" alignment="0" pref="37" max="32767" attributes="0"/>
                       <Component id="jButton14" alignment="0" max="32767" attributes="0"/>
                       <Component id="jButton17" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButton21" alignment="0" max="32767" attributes="0"/>
+                      <Component id="igualB" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton24" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jButton22" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jButton25" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jButton26" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="porB" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="divB" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="restaB" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="sumaB" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="40" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton28" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jButton27" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="parDerB" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="parIzqB" min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jButton29" max="32767" attributes="0"/>
                           <Component id="jButton30" min="-2" pref="50" max="-2" attributes="0"/>
@@ -109,7 +109,7 @@
                       <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton22" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="divB" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jButton29" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -117,7 +117,7 @@
                       <Component id="jButton16" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton14" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton24" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="porB" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jButton30" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -125,19 +125,19 @@
                       <Component id="jButton18" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton19" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton17" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton25" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="jButton27" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="restaB" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="parIzqB" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="35" pref="44" max="32767" attributes="0"/>
-                                  <Component id="jButton28" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="parDerB" min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton26" max="32767" attributes="0"/>
+                                  <Component id="sumaB" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
@@ -146,8 +146,8 @@
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton20" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton21" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="puntoB" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="igualB" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -327,7 +327,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton20ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton21">
+        <Component class="javax.swing.JButton" name="igualB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -341,10 +341,10 @@
             <Property name="text" type="java.lang.String" value="="/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton21ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="igualBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton22">
+        <Component class="javax.swing.JButton" name="divB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -358,10 +358,10 @@
             <Property name="text" type="java.lang.String" value="&#xf7;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton22ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="divBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton23">
+        <Component class="javax.swing.JButton" name="puntoB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -375,10 +375,10 @@
             <Property name="text" type="java.lang.String" value="."/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton23ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="puntoBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton24">
+        <Component class="javax.swing.JButton" name="porB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -392,10 +392,10 @@
             <Property name="text" type="java.lang.String" value="x"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton24ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="porBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton25">
+        <Component class="javax.swing.JButton" name="restaB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -409,10 +409,10 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton25ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="restaBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton26">
+        <Component class="javax.swing.JButton" name="sumaB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -426,12 +426,12 @@
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton26ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sumaBActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPantalla">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton27">
+        <Component class="javax.swing.JButton" name="parIzqB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -445,10 +445,10 @@
             <Property name="text" type="java.lang.String" value="("/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton27ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="parIzqBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton28">
+        <Component class="javax.swing.JButton" name="parDerB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -462,7 +462,7 @@
             <Property name="text" type="java.lang.String" value=")"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton28ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="parDerBActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton29">

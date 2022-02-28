@@ -40,15 +40,15 @@ public class PanelCalculadora extends javax.swing.JFrame {
         jButton18 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
+        igualB = new javax.swing.JButton();
+        divB = new javax.swing.JButton();
+        puntoB = new javax.swing.JButton();
+        porB = new javax.swing.JButton();
+        restaB = new javax.swing.JButton();
+        sumaB = new javax.swing.JButton();
         txtPantalla = new javax.swing.JTextField();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
+        parIzqB = new javax.swing.JButton();
+        parDerB = new javax.swing.JButton();
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
 
@@ -157,83 +157,83 @@ public class PanelCalculadora extends javax.swing.JFrame {
             }
         });
 
-        jButton21.setBackground(new java.awt.Color(204, 204, 255));
-        jButton21.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton21.setForeground(new java.awt.Color(255, 255, 255));
-        jButton21.setText("=");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        igualB.setBackground(new java.awt.Color(204, 204, 255));
+        igualB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        igualB.setForeground(new java.awt.Color(255, 255, 255));
+        igualB.setText("=");
+        igualB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                igualBActionPerformed(evt);
             }
         });
 
-        jButton22.setBackground(new java.awt.Color(204, 204, 255));
-        jButton22.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton22.setForeground(new java.awt.Color(255, 255, 255));
-        jButton22.setText("÷");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        divB.setBackground(new java.awt.Color(204, 204, 255));
+        divB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        divB.setForeground(new java.awt.Color(255, 255, 255));
+        divB.setText("÷");
+        divB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                divBActionPerformed(evt);
             }
         });
 
-        jButton23.setBackground(new java.awt.Color(204, 204, 255));
-        jButton23.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(255, 255, 255));
-        jButton23.setText(".");
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
+        puntoB.setBackground(new java.awt.Color(204, 204, 255));
+        puntoB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        puntoB.setForeground(new java.awt.Color(255, 255, 255));
+        puntoB.setText(".");
+        puntoB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
+                puntoBActionPerformed(evt);
             }
         });
 
-        jButton24.setBackground(new java.awt.Color(204, 204, 255));
-        jButton24.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(255, 255, 255));
-        jButton24.setText("x");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        porB.setBackground(new java.awt.Color(204, 204, 255));
+        porB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        porB.setForeground(new java.awt.Color(255, 255, 255));
+        porB.setText("x");
+        porB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                porBActionPerformed(evt);
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(204, 204, 255));
-        jButton25.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(255, 255, 255));
-        jButton25.setText("-");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        restaB.setBackground(new java.awt.Color(204, 204, 255));
+        restaB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        restaB.setForeground(new java.awt.Color(255, 255, 255));
+        restaB.setText("-");
+        restaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                restaBActionPerformed(evt);
             }
         });
 
-        jButton26.setBackground(new java.awt.Color(204, 204, 255));
-        jButton26.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton26.setForeground(new java.awt.Color(255, 255, 255));
-        jButton26.setText("+");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
+        sumaB.setBackground(new java.awt.Color(204, 204, 255));
+        sumaB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        sumaB.setForeground(new java.awt.Color(255, 255, 255));
+        sumaB.setText("+");
+        sumaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
+                sumaBActionPerformed(evt);
             }
         });
 
-        jButton27.setBackground(new java.awt.Color(204, 204, 255));
-        jButton27.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton27.setForeground(new java.awt.Color(255, 255, 255));
-        jButton27.setText("(");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        parIzqB.setBackground(new java.awt.Color(204, 204, 255));
+        parIzqB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        parIzqB.setForeground(new java.awt.Color(255, 255, 255));
+        parIzqB.setText("(");
+        parIzqB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                parIzqBActionPerformed(evt);
             }
         });
 
-        jButton28.setBackground(new java.awt.Color(204, 204, 255));
-        jButton28.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        jButton28.setForeground(new java.awt.Color(255, 255, 255));
-        jButton28.setText(")");
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
+        parDerB.setBackground(new java.awt.Color(204, 204, 255));
+        parDerB.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        parDerB.setForeground(new java.awt.Color(255, 255, 255));
+        parDerB.setText(")");
+        parDerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
+                parDerBActionPerformed(evt);
             }
         });
 
@@ -273,23 +273,23 @@ public class PanelCalculadora extends javax.swing.JFrame {
                     .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(puntoB, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(igualB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(porB, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(divB, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restaB, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sumaB, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(parDerB, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(parIzqB, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -309,38 +309,38 @@ public class PanelCalculadora extends javax.swing.JFrame {
                     .addComponent(jButton11)
                     .addComponent(jButton13)
                     .addComponent(jButton12)
-                    .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(divB, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton16)
                     .addComponent(jButton14)
                     .addComponent(jButton15)
-                    .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(porB, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton18)
                     .addComponent(jButton19)
                     .addComponent(jButton17)
-                    .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(restaB, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(parIzqB, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(35, 44, Short.MAX_VALUE)
-                                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(parDerB, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(sumaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(21, 21, 21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton20)
-                            .addComponent(jButton23)
-                            .addComponent(jButton21))
+                            .addComponent(puntoB)
+                            .addComponent(igualB))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -406,11 +406,11 @@ public class PanelCalculadora extends javax.swing.JFrame {
             txtPantalla.setText(txtPantalla.getText()+"0");
     }//GEN-LAST:event_jButton20ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void igualBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
+    }//GEN-LAST:event_igualBActionPerformed
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void divBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divBActionPerformed
         // TODO add your handling code here:
         String cadena;
         cadena = txtPantalla.getText();
@@ -428,9 +428,9 @@ public class PanelCalculadora extends javax.swing.JFrame {
         }
         
        
-    }//GEN-LAST:event_jButton22ActionPerformed
+    }//GEN-LAST:event_divBActionPerformed
 
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+    private void puntoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoBActionPerformed
            // TODO add your handling code here:
            String cadena;
            cadena=txtPantalla.getText();
@@ -450,9 +450,9 @@ public class PanelCalculadora extends javax.swing.JFrame {
                       txtPantalla.setText("Invalido"); 
                    }     
                }      
-    }//GEN-LAST:event_jButton23ActionPerformed
+    }//GEN-LAST:event_puntoBActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void porBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porBActionPerformed
         // TODO add your handling code here:
        String cadena;
         cadena = txtPantalla.getText();
@@ -468,11 +468,11 @@ public class PanelCalculadora extends javax.swing.JFrame {
             }
                 
         }
-    }//GEN-LAST:event_jButton24ActionPerformed
+    }//GEN-LAST:event_porBActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void restaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaBActionPerformed
         // TODO add your handling code here:
-               String cadena;
+        String cadena;
         cadena = txtPantalla.getText();
         int i=0;
         
@@ -486,9 +486,9 @@ public class PanelCalculadora extends javax.swing.JFrame {
             }
                 
         }
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_restaBActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+    private void sumaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumaBActionPerformed
         // TODO add your handling code here:
         
         String cadena;
@@ -505,9 +505,9 @@ public class PanelCalculadora extends javax.swing.JFrame {
             }
                 
         }
-    }//GEN-LAST:event_jButton26ActionPerformed
+    }//GEN-LAST:event_sumaBActionPerformed
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+    private void parIzqBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parIzqBActionPerformed
         // TODO add your handling code here:
         
         String cadena;
@@ -526,9 +526,9 @@ public class PanelCalculadora extends javax.swing.JFrame {
         else{
             txtPantalla.setText("Invalido");
         }
-    }//GEN-LAST:event_jButton27ActionPerformed
+    }//GEN-LAST:event_parIzqBActionPerformed
 
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+    private void parDerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parDerBActionPerformed
         // TODO add your handling code here:
         String cadena;
         cadena = txtPantalla.getText();
@@ -548,7 +548,7 @@ public class PanelCalculadora extends javax.swing.JFrame {
         else{
             txtPantalla.setText("Invalido");
         }
-    }//GEN-LAST:event_jButton28ActionPerformed
+    }//GEN-LAST:event_parDerBActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         // TODO add your handling code here:
@@ -583,6 +583,8 @@ public class PanelCalculadora extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton divB;
+    private javax.swing.JButton igualB;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
@@ -593,17 +595,15 @@ public class PanelCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton30;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton parDerB;
+    private javax.swing.JButton parIzqB;
+    private javax.swing.JButton porB;
+    private javax.swing.JButton puntoB;
+    private javax.swing.JButton restaB;
+    private javax.swing.JButton sumaB;
     private javax.swing.JTextField txtPantalla;
     // End of variables declaration//GEN-END:variables
 
