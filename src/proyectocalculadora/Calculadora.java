@@ -288,6 +288,13 @@ public class Calculadora {
 
         return respfinal;
     }
+    
+    /**
+     * 
+     * El metodo opera le entra un caracter y hace la operacion entre los 
+     * dos doubles
+     * 
+     */
 
     private static double opera(char operador, double first, double second) {
         double resp=0;
@@ -303,6 +310,12 @@ public class Calculadora {
 
         return resp;
     }
+    
+    /**
+     * 
+     * El metodo entradaDeUnValor funciona para verificar que no entre 
+     * solamente un operador.
+     */
 
     private static boolean entradasDeUnValor(String entrada) {
         boolean resp = false;
