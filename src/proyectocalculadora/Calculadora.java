@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * @author Elena Sofía Luna Palacio, Gerardo Guerrero <gguerr21@itam.mx>, Carlos Elias Rivera 
+ * @author Elena Sofía Luna Palacio, Gerardo Guerrero <gguerr21@itam.mx>, Carlos Elias Rivera, Mauricio Diaz Villarreal,
+ * Almudena Fernandez Verda
  * 203214
  * Feb 25, 2022
  */
@@ -242,7 +243,7 @@ public class Calculadora {
     public static String calcula(String entrada) {
         String respfinal= "";
         PilaA<Double> resultado = new PilaA<Double>();
-        if(!(entrada.length() == 0 || entrada.length() == 1)) {
+        if(!(entradasDeUnValor(entrada))) {
             if (revisaSintaxis(entrada) && entrada.length() < 50) {
                 String limpio = infijaAPostfija(entrada);
                 double resp = 0;
@@ -303,6 +304,15 @@ public class Calculadora {
             case '/': resp = first/second; break;
             case '-': resp = first-second; break;
         }
+
+        return resp;
+    }
+
+    private static boolean entradasDeUnValor(String entrada) {
+        boolean resp = false;
+
+        resp = entrada.equals("+") || entrada.equals("-") || entrada.equals("/") || entrada.equals("*");
+
 
         return resp;
     }

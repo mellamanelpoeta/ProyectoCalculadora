@@ -419,12 +419,17 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private void igualBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualBActionPerformed
         // TODO add your handling code here:
         String entrada = txtPantalla.getText();
-        try{
-            String resultado = Calculadora.calcula(entrada);
-            txtPantalla.setText(resultado);
-        } catch(Exception e){
-            txtPantalla.setText(e.getMessage());
+        if (entrada.contains("+") || entrada.contains("-") ||entrada.contains("*") || entrada.contains("/")) {
+            try{
+                String resultado = Calculadora.calcula(entrada);
+                txtPantalla.setText(resultado);
+            } catch(Exception e){
+                txtPantalla.setText(e.getMessage());
+            }
         }
+        else
+            txtPantalla.setText(entrada);
+
         
         
     }//GEN-LAST:event_igualBActionPerformed

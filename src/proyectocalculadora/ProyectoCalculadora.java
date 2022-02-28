@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Gerardo Guerrero <gguerr21@itam.mx>
+ * @author Gerardo Guerrero <gguerr21@itam.mx> Carlos Elias Rivera Mercado <criver20@itam.mx>
  */
 public class ProyectoCalculadora {
 
@@ -14,17 +14,17 @@ public class ProyectoCalculadora {
      */
     public static void main(String[] args) {
         Scanner lee = new Scanner(System.in);
-        /*try {
+        try {
             System.out.println(Calculadora.calcula(lee.nextLine()));
         } catch (Exception divisionEntre0) {
             System.out.println(divisionEntre0.getMessage());
-        }*/
-
-        System.out.println(Calculadora.calcula(lee.nextLine()));
+        }
 
 
 
-        
+
+
+
         
     }
     
