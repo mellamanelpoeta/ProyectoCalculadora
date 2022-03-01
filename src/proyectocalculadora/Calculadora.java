@@ -15,7 +15,7 @@ public class Calculadora {
     /**
      * 
      * El metodo revisaPunto funciona para revisar los puntos decimales 
-     * una entrada especifica
+     * una entrada especifica, de la cadena en las operaciones
      */
     
     private static boolean revisaPuntos(String cadena){
@@ -49,7 +49,8 @@ public class Calculadora {
     /**
      * 
      * El metodo revisaSintaxis tiene el proposito de revisar la sintaxis
-     * de la calculadora para que no haya ningun error
+     * de la calculadora para que no haya ningun error, recibiendo como 
+     * parametro la cadena de operaciones infija
      */
     
     private static boolean revisaSintaxis(String entrada){
@@ -159,7 +160,8 @@ public class Calculadora {
     
     /**
      * El metodo calculaJerarquia sirve para indicar el orden de operaciones
-     * en la calculadora, es parte del metodo infijaAPostfija
+     * en la calculadora, es parte del metodo infijaAPostfija, recibe como 
+     * parametro el operador y el tope de la pila
      * 
      */
 
@@ -180,6 +182,12 @@ public class Calculadora {
         return a >= b; // esto es lo que me indica que lo de hasta arriba de la pila sea mayor o igual al caracter en el que estoy
 
     }
+    
+    /**
+     * 
+     * El metodo inflijaPostfija recibe como parametro la operacion para 
+     * cambiarla de notacion infija a postfija
+     */
 
     private static String infijaAPostfija(String entrada) {
         StringBuilder bob = new StringBuilder();
@@ -238,6 +246,7 @@ public class Calculadora {
      * 
      * El metodo calcula determina el valor a partir de la cadena del metodo 
      * que cambia de infija a postfija
+     * 
      */
 
     public static String calcula(String entrada) {

@@ -425,7 +425,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         } catch(Exception e){
             txtPantalla.setText(e.getMessage());
         }
-    }
+    
 
 
         

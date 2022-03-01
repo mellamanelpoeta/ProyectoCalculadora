@@ -14,6 +14,11 @@ public class DivisionEntreCeroExcepcion extends RuntimeException{
      public DivisionEntreCeroExcepcion(){
         super();
     }
+     
+     /**
+      * Tenemos este metodo en dado caso que suceda una division entre 0
+      * 
+      */
 
     public DivisionEntreCeroExcepcion(String mensaje){
         super(mensaje);

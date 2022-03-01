@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ProyectoCalculadora {
 
     /**
-     * @param args the command line arguments
+     * Aqui probamos los casos de entrada para la calculadora
      */
     public static void main(String[] args) {
         Scanner lee = new Scanner(System.in);
