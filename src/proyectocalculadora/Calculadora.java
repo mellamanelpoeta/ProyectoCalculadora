@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * @author Elena Sofía Luna Palacio, Gerardo Guerrero <gguerr21@itam.mx>, Carlos Elias Rivera, Mauricio Diaz Villarreal,
+ * @author Elena Sofía Luna Palacio, Gerardo Guerrero, Carlos Elias Rivera, Mauricio Diaz Villarreal,
  * Almudena Fernandez Verda
  * 203214
  * Feb 25, 2022

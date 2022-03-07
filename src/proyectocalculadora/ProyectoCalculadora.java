@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Gerardo Guerrero <gguerr21@itam.mx> Carlos Elias Rivera Mercado <criver20@itam.mx>
+ * @author Gerardo Guerrero, Carlos Elias Rivera Mercado 
  */
 public class ProyectoCalculadora {
 

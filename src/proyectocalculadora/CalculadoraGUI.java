@@ -1,5 +1,7 @@
 package proyectocalculadora;
 
+import proyectocalculadora.Calculadora;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -53,7 +55,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 204, 255));
         setForeground(java.awt.Color.white);
 
-        txtPantalla.setBackground(new java.awt.Color(255, 255, 255));
         txtPantalla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPantallaActionPerformed(evt);
@@ -151,7 +152,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         puntoB.setBackground(new java.awt.Color(204, 204, 255));
-        puntoB.setForeground(new java.awt.Color(0, 0, 0));
         puntoB.setText(".");
         puntoB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +160,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         igualB.setBackground(new java.awt.Color(255, 204, 204));
-        igualB.setForeground(new java.awt.Color(0, 0, 0));
         igualB.setText("=");
         igualB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +168,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         divB.setBackground(new java.awt.Color(204, 204, 255));
-        divB.setForeground(new java.awt.Color(0, 0, 0));
         divB.setText("/");
         divB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +176,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         porB.setBackground(new java.awt.Color(204, 204, 255));
-        porB.setForeground(new java.awt.Color(0, 0, 0));
         porB.setText("x");
         porB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +184,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         restaB.setBackground(new java.awt.Color(204, 204, 255));
-        restaB.setForeground(new java.awt.Color(0, 0, 0));
         restaB.setText("-");
         restaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,7 +192,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         sumaB.setBackground(new java.awt.Color(204, 204, 255));
-        sumaB.setForeground(new java.awt.Color(0, 0, 0));
         sumaB.setText("+");
         sumaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +200,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         clearB.setBackground(new java.awt.Color(255, 204, 204));
-        clearB.setForeground(new java.awt.Color(0, 0, 0));
         clearB.setText("C");
         clearB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +208,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         parIzqB.setBackground(new java.awt.Color(204, 204, 255));
-        parIzqB.setForeground(new java.awt.Color(0, 0, 0));
         parIzqB.setText("(");
         parIzqB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +216,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         parDerB.setBackground(new java.awt.Color(204, 204, 255));
-        parDerB.setForeground(new java.awt.Color(0, 0, 0));
         parDerB.setText(")");
         parDerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +224,6 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         deleteB.setBackground(new java.awt.Color(255, 204, 204));
-        deleteB.setForeground(new java.awt.Color(0, 0, 0));
         deleteB.setText("DEL");
         deleteB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,25 +241,25 @@ public class CalculadoraGUI extends javax.swing.JFrame {
                     .addComponent(txtPantalla)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ceroB, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                            .addComponent(ceroB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cuatroB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(sieteB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(unoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ochoB, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                            .addComponent(ochoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cincoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dosB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(puntoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nueveB, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                            .addComponent(nueveB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(seisB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tresB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(igualB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(divB, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                            .addComponent(divB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(porB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(restaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(sumaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -505,3 +496,4 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private javax.swing.JButton unoB;
     // End of variables declaration//GEN-END:variables
 }
+
