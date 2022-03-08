@@ -7,7 +7,6 @@ import java.util.Arrays;
 /**
  * @author Elena Sofía Luna Palacio, Gerardo Guerrero, Carlos Elias Rivera, Mauricio Diaz Villarreal,
  * Almudena Fernandez Verda
- * 203214
  * Feb 25, 2022
  */
 public class Calculadora {
@@ -253,7 +252,7 @@ public class Calculadora {
         String respfinal= "";
         PilaA<Double> resultado = new PilaA<Double>();
 
-        if ( !(entradasDeUnValor(entrada)) && revisaSintaxis(entrada) && entrada.length() < 50) {
+        if (entrada.length() >1 && entrada.length() < 50 && !(entradasDeUnValor(entrada)) && revisaSintaxis(entrada)) {
             String limpio = infijaAPostfija(entrada);
             double resp = 0;
             ArrayList<Character> ops = new ArrayList<Character>();
@@ -293,7 +292,7 @@ public class Calculadora {
             }
             respfinal = resultado.peek() + "";
         } else
-            respfinal = "Sintax error";
+            respfinal = "Syntax error";
 
         return respfinal;
     }
